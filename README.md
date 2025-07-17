@@ -1,84 +1,91 @@
 # SuperID
 
-**Projeto Integrador 3**  
-_PUC Campinas – Engenharia de Software – 3° Semestre_
+**Integrative Project 3**  
+_PUC Campinas – Software Engineering – 3rd Semester_
 
-## Integrantes:
+## Team Members:
 - [Arthur Azevedo Locce Baptista](https://github.com/arthurlocce)  
 - [Eduarda Picolo Barboza](https://github.com/eduardapicolo)  
 - [Felipe Nonato Leoneli](https://github.com/lipeleoneli)  
 - [Henrique Martins](https://github.com/HenriqueMartins2502)  
 - [Sophia Franco de Godoy](https://github.com/sophiagodoy)
 
-## Sobre o Projeto
+## About the Project
 
-O **SuperID** é um aplicativo Android nativo, desenvolvido em Kotlin, cujo objetivo principal é proporcionar um gerenciamento seguro e centralizado de credenciais de acesso. Nele, o usuário pode:
+**SuperID** is a native Android application developed in Kotlin, with the main goal of providing secure and centralized credential management. Users can:
 
-- Cadastrar e armazenar senhas criptografadas, organizadas por categorias (Sites Web, Aplicativos, Dispositivos etc.).  
-- Recuperar sua “senha mestre” em caso de esquecimento, via e-mail.  
-- Realizar “login sem senha” em sites parceiros por meio da leitura de um QR Code.
+- Register and store encrypted passwords organized by categories (Websites, Applications, Devices, etc.).  
+- Recover their “master password” via email in case of forgetting it.  
+- Perform “passwordless login” on partner websites by scanning a QR Code.
 
-Para demonstrar o fluxo de **login sem senha**, criamos um **site parceiro de demonstração** que gera o QR Code necessário e recebe o resultado da autenticação, facilitando testes e validação do processo.
+To demonstrate the **passwordless login** flow, we created a **partner demonstration website** that generates the necessary QR Code and receives the authentication result, facilitating testing and validation.
 
-## Tecnologias e Ferramentas
+## Technologies and Tools
 
-## SuperID - Android Studio 
+### SuperID - Android Studio
 - **Kotlin**  
 - **Android Studio**  
 - **Firebase Firestore**  
 - **Firebase Authentication**  
-- **Firebase Functions**
-- **VsCode**
+- **Firebase Functions**  
+- **VSCode**  
 - **Git & GitHub**
 
-## Site Parceiro - VSCode 
-- **TypeScript**
-- **JavaScript**
-- **HTML**
+### Partner Website - VSCode
+- **TypeScript**  
+- **JavaScript**  
+- **HTML**  
 - **CSS**
 
-## Como Abrir e Rodar no Android Studio
+## How to Open and Run in Android Studio
 
-1. **Clone o Repositório**
-      ```bash
-   git@github.com:sophiagodoy/PI3-Turma01-Grupo03.git
+1. **Clone the repository**
+    ```bash
+    git@github.com:sophiagodoy/PI3-Turma01-Grupo03.git
+    ```
 
-3. **Abra o Android Studio**  
-   - Inicie o Android Studio e abra a pasta que foi clonada
+2. **Open Android Studio**  
+   - Launch Android Studio and open the cloned project folder.
 
-4. **Configurar o Firebase (Firestore + Authentication)**  
-   - No Console [Firebase](https://console.firebase.google.com/), crie um novo projeto. 
-   - Ative o **Firestore** e o **Authentication**.  
-   - Baixe o arquivo de configuração `google-services.json` e copie para a pasta `app/`.
+3. **Configure Firebase (Firestore + Authentication)**  
+   - In the [Firebase Console](https://console.firebase.google.com/), create a new project.  
+   - Enable **Firestore** and **Authentication**.  
+   - Download the `google-services.json` configuration file and place it in the `app/` folder.
 
-5. **Sincronize o Gradle**  
-   - No Android Studio, clique em **Sync Now** quando for solicitado.  
-   - Certifique-se de que não há erros de dependências.
+4. **Sync Gradle**  
+   - In Android Studio, click **Sync Now** when prompted.  
+   - Ensure there are no dependency errors.
 
-6. **Execute no emulador**  
-   - Dentro do Android Studio, selecione um emulador existente ou crie um novo.  
-   - Clique em **Run** para instalar e iniciar o app no emulador.  
+5. **Run on emulator**  
+   - Select an existing emulator or create a new one.  
+   - Click **Run** to install and start the app on the emulator.
 
-> **Observação:** ao criar ou editar dados no app, você poderá visualizar e monitorar tudo em tempo real no banco de dados Firestore e no Authentication.
+> **Note:** When creating or editing data in the app, you can monitor everything in real-time on Firestore and Authentication dashboards.
 
-## Como Rodar no Celular Android
+## How to Run on an Android Device
 
-1. Conecte um dispositivo Android via cabo USB e ative a **Depuração USB** em **Opções de Desenvolvedor**; 
-2. No Android Studio, selecione seu dispositivo;
-3. Clique em **Run**; o app será instalado e executado diretamente no celular;
+1. Connect an Android device via USB and enable **USB Debugging** in **Developer Options**;  
+2. Select your device in Android Studio;  
+3. Click **Run**; the app will be installed and executed directly on your device.
 
-## Site Parceiro para demonstração 
+## Partner Website for Demonstration
 
-1. Clone o primeiro repositório (Site parceiro, onde é exibida uma tela de login, onde o botão "logar com superId" quando clicado, gera um qrcode, que quando escaneado pela câmera do nosso app, exiber a mensagem "Login bem sucedido") 
-      ```bash
-   git@github.com:HenriqueMartins2502/Site-parceiro-PI.git
+1. Clone the first repository (Partner site which displays a login screen, where clicking the "login with SuperID" button generates a QR code that, when scanned by our app’s camera, shows a "Login successful" message):  
+    ```bash
+    git@github.com:HenriqueMartins2502/Site-parceiro-PI.git
+    ```
 
-3. Clone o segundo repositório (aqui é necessario consfigurar o firebase functions de acordo com o seu sistema operacional). Este é o repositório onde foram feitas as firebase functions, reposaveis por gerar o qrCode na base 64 e onde é feita a consulta no banco de dados quando escaneado o qrCode. Rode os dois comandos no terminal - npm install firebase-admin firebase-functions qrcode e nom instal --save-dev@types/qrcode
-      ```bash
-   git@github.com:HenriqueMartins2502/Firebase-functions-PI.git
-      
-4. Abra no VSCode
+2. Clone the second repository (Firebase Functions repo responsible for generating the QR Code in base64 and querying the database when the QR Code is scanned. You will need to configure Firebase Functions according to your OS). Run these two commands in the terminal:  
+    ```bash
+    npm install firebase-admin firebase-functions qrcode
+    npm install --save-dev @types/qrcode
+    ```
+    ```bash
+    git@github.com:HenriqueMartins2502/Firebase-functions-PI.git
+    ```
 
-## Aproveite!
+3. Open the project in VSCode.
 
-Divirta-se organizando e protegendo suas senhas com o SuperID! 🚀🔒
+## Enjoy!
+
+Have fun organizing and protecting your passwords with SuperID! 🚀🔒
